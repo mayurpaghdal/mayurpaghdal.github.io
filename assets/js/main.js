@@ -17,44 +17,54 @@
     try { localStorage.setItem('theme', next); } catch (e) {}
   });
 
-  /* ---------- architecture diagram facets ---------- */
+  /* ---------- hero illustration: stop moving packets if the visitor prefers less motion ---------- */
+  var heroSvg = document.querySelector('.hero-art svg');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function applyMotion() {
+    if (!heroSvg || !heroSvg.pauseAnimations) return;
+    if (reduceMotion.matches) heroSvg.pauseAnimations(); else heroSvg.unpauseAnimations();
+  }
+  applyMotion();
+  if (reduceMotion.addEventListener) reduceMotion.addEventListener('change', applyMotion);
+
+  /* ---------- architecture diagram topics ---------- */
   var CLIENTS = ['cl-admin', 'cl-web', 'cl-desk', 'cl-ops'];
   var CLIENT_EDGES = ['c1', 'c2', 'c3', 'c4'];
 
   var FACETS = {
     tenancy: {
       title: 'Tenancy & data isolation',
-      body: 'Designed a database-per-tenant model with a central tenant catalogue, row-level security and a separate analytics warehouse — strong isolation for enterprise customers while one codebase serves cloud-hosted and on-premise tenants.',
+      body: 'One database per tenant, a central tenant catalogue, row-level security and a separate analytics warehouse. Enterprise customers get their data isolated, and the same codebase runs both cloud-hosted and on-premise tenants.',
       nodes: ['api', 'cat', 'db', 'wh'],
       edges: ['api-cat', 'api-db', 'cat-db', 'db-wh']
     },
     gtm: {
-      title: 'Go-to-market enablement',
-      body: 'Designed self-service onboarding from AppSource purchase to a provisioned tenant with Entra ID admin consent, plus Marketplace subscription handling that acknowledges events instantly and processes them through an idempotent, retry-safe queue.',
+      title: 'Marketplace onboarding',
+      body: 'Self-service onboarding: a customer buys on AppSource, grants Entra ID admin consent and gets a provisioned tenant. Marketplace subscription events are acknowledged immediately and processed through an idempotent, retry-safe queue.',
       nodes: ['market', 'queue', 'fn', 'cat', 'db', 'entra'],
       edges: ['mk-q', 'q-fn', 'fn-db', 'cat-db']
     },
     identity: {
       title: 'Identity & security',
-      body: 'Defined single sign-on across all web apps on Microsoft Entra ID, with shared authentication and per-app authorization, and secured pre-session service calls with signed, time-limited keys.',
+      body: 'Single sign-on across all web apps with Microsoft Entra ID: shared authentication, per-app authorization, and signed, time-limited keys for service calls made before a user session exists.',
       nodes: CLIENTS.concat(['entra', 'api']),
       edges: CLIENT_EDGES.concat(['entra-api'])
     },
     integration: {
-      title: 'Integration architecture',
-      body: 'Shaped an event-driven layer connecting Outlook, Planner, To Do, SharePoint, Dynamics 365 and Azure DevOps through Graph change notifications, delta-based incremental sync and 20+ scheduled services, with a deduplication buffer that prevents duplicate writes and database deadlocks.',
+      title: 'Integrations',
+      body: 'Event-driven sync with Outlook, Planner, To Do, SharePoint, Dynamics 365 and Azure DevOps using Graph change notifications, delta queries and 20+ scheduled services. A deduplication buffer prevents duplicate writes and database deadlocks.',
       nodes: ['m365', 'graph', 'fn', 'db'],
       edges: ['m365-graph', 'graph-fn', 'fn-db']
     },
     channels: {
-      title: 'Multi-channel product',
-      body: 'Set the architecture for four client channels — admin portal, web tracker, Windows desktop app with push notifications, and operations console — on shared APIs with English and German localization.',
+      title: 'Client apps',
+      body: 'Four client apps (admin portal, web tracker, Windows desktop app with push notifications, operations console) on one set of shared APIs, localized in English and German.',
       nodes: CLIENTS.concat(['api']),
       edges: CLIENT_EDGES
     },
     reliability: {
-      title: 'Reliability & release governance',
-      body: 'Led production-stability remediation (thread-pool starvation, connection-pool exhaustion) across the API and 20+ background services, added endpoint health monitoring, and designed a unified database release pipeline with backups, drift validation and per-script audit.',
+      title: 'Reliability & releases',
+      body: 'Fixed production stability issues (thread-pool starvation, connection-pool exhaustion) across the API and 20+ background services, added endpoint health monitoring, and built one database release pipeline with backups, drift checks and a per-script audit.',
       nodes: ['api', 'fn', 'db', 'cat'],
       edges: ['api-db', 'fn-db', 'api-cat', 'q-fn']
     }
@@ -97,7 +107,7 @@
 
   showFacet('tenancy');
 
-  /* ---------- active section in the sidebar ---------- */
+  /* ---------- highlight the section being read ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll('.side-nav a'));
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -110,21 +120,6 @@
     }, { rootMargin: '-40% 0px -55% 0px' });
     document.querySelectorAll('main section[id]').forEach(function (s) { io.observe(s); });
   }
-
-  /* ---------- copy buttons ---------- */
-  document.querySelectorAll('.copy').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var text = btn.getAttribute('data-copy');
-      var done = function () {
-        btn.textContent = 'Copied';
-        btn.classList.add('done');
-        setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 1600);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done, function () {});
-      }
-    });
-  });
 
   /* ---------- footer year ---------- */
   var y = document.getElementById('year');
