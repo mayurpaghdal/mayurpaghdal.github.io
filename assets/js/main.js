@@ -28,45 +28,51 @@
   if (reduceMotion.addEventListener) reduceMotion.addEventListener('change', applyMotion);
 
   /* ---------- architecture diagram topics ---------- */
-  var CLIENTS = ['cl-admin', 'cl-web', 'cl-desk', 'cl-ops'];
-  var CLIENT_EDGES = ['c1', 'c2', 'c3', 'c4'];
+  var CLIENTS = ['cl-admin', 'cl-web', 'cl-desk', 'cl-mob', 'cl-ops'];
+  var CLIENT_EDGES = ['c1', 'c2', 'c3', 'c4', 'c5'];
 
   var FACETS = {
     tenancy: {
-      title: 'Tenancy & data isolation',
-      body: 'One database per tenant, a central tenant catalogue, row-level security and a separate analytics warehouse. Enterprise customers get their data isolated, and the same codebase runs both cloud-hosted and on-premise tenants.',
-      nodes: ['api', 'cat', 'db', 'wh'],
-      edges: ['api-cat', 'api-db', 'cat-db', 'db-wh']
+      title: 'Tenancy',
+      body: 'bs-one started as a standalone system installed separately for every customer. I designed the backend that made it multi-tenant: one database per tenant, a central tenant catalogue and row-level security, with one codebase for cloud and on-premise customers.',
+      nodes: ['api', 'cat', 'db'],
+      edges: ['api-cat', 'api-db', 'cat-db']
     },
     gtm: {
       title: 'Marketplace onboarding',
-      body: 'Self-service onboarding: a customer buys on AppSource, grants Entra ID admin consent and gets a provisioned tenant. Marketplace subscription events are acknowledged immediately and processed through an idempotent, retry-safe queue.',
+      body: 'A customer buys on AppSource, gives Entra ID admin consent and gets a ready tenant with no manual setup. Subscription events go through a retry-safe queue, so a retry never applies a change twice.',
       nodes: ['market', 'queue', 'fn', 'cat', 'db', 'entra'],
-      edges: ['mk-q', 'q-fn', 'fn-db', 'cat-db']
+      edges: ['mk-q', 'q-fn', 'fn-db']
     },
     identity: {
-      title: 'Identity & security',
-      body: 'Single sign-on across all web apps with Microsoft Entra ID: shared authentication, per-app authorization, and signed, time-limited keys for service calls made before a user session exists.',
-      nodes: CLIENTS.concat(['entra', 'api']),
+      title: 'Security',
+      body: 'Entra ID single sign-on with per-app permissions, secrets kept in Key Vault, and short-lived signed keys for calls made before login.',
+      nodes: CLIENTS.concat(['entra', 'api', 'kv']),
       edges: CLIENT_EDGES.concat(['entra-api'])
     },
     integration: {
-      title: 'Integrations',
-      body: 'Event-driven sync with Outlook, Planner, To Do, SharePoint, Dynamics 365 and Azure DevOps using Graph change notifications, delta queries and 20+ scheduled services. A deduplication buffer prevents duplicate writes and database deadlocks.',
-      nodes: ['m365', 'graph', 'fn', 'db'],
-      edges: ['m365-graph', 'graph-fn', 'fn-db']
+      title: 'Event-driven sync',
+      body: 'Sync with Outlook, Planner, To Do, SharePoint, Dynamics 365 and Azure DevOps using Graph change notifications, delta sync and 20+ background services. A dedup buffer stops duplicate writes and deadlocks, and SignalR pushes live updates to the apps.',
+      nodes: ['m365', 'graph', 'fn', 'db', 'api'].concat(CLIENTS),
+      edges: ['m365-graph', 'graph-fn', 'fn-db'].concat(CLIENT_EDGES)
     },
     channels: {
       title: 'Client apps',
-      body: 'Four client apps (admin portal, web tracker, Windows desktop app with push notifications, operations console) on one set of shared APIs, localized in English and German.',
+      body: 'Five multilingual apps (admin portal, web tracker, desktop app, mobile app, operations console) on one set of shared APIs. Desktop push notifications go through Azure Notification Hubs. The desktop app, bs-one Uplift, is live on Microsoft Marketplace and the Microsoft Store.',
       nodes: CLIENTS.concat(['api']),
       edges: CLIENT_EDGES
     },
+    hosting: {
+      title: 'Hosting cost',
+      body: 'The Azure setup (Functions, queues, Service Bus, VMs, Redis) is designed to keep hosting cost down without losing reliability, and the same codebase also runs on customers’ own servers.',
+      nodes: ['fn', 'queue', 'redis', 'api'],
+      edges: ['q-fn']
+    },
     reliability: {
-      title: 'Reliability & releases',
-      body: 'Fixed production stability issues (thread-pool starvation, connection-pool exhaustion) across the API and 20+ background services, added endpoint health monitoring, and built one database release pipeline with backups, drift checks and a per-script audit.',
+      title: 'Releases & stability',
+      body: 'Database releases use hand-written scripts plus Visual Studio Schema Compare against a base PROD database. Only the final change set goes to every tenant, then random tenant databases are compared to confirm. In production I handle issues like thread-pool starvation and connection-pool exhaustion across the API and 20+ background services, with health checks on key endpoints.',
       nodes: ['api', 'fn', 'db', 'cat'],
-      edges: ['api-db', 'fn-db', 'api-cat', 'q-fn']
+      edges: ['api-db', 'fn-db', 'api-cat', 'cat-db']
     }
   };
 

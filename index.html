@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mayur Paghdal · Solutions Architect</title>
-  <meta name="description" content="Solutions Architect and Technical Lead. 15+ years in .NET, the last several designing multi-tenant SaaS on Microsoft Azure.">
-  <meta property="og:title" content="Mayur Paghdal · Solutions Architect">
-  <meta property="og:description" content="Multi-tenant SaaS on Microsoft Azure. Architect of bs-one, 6,000+ concurrent users.">
+  <title>Mayur Paghdal · Technical Lead, .NET Architecture</title>
+  <meta name="description" content="Technical Lead (.NET Architecture). 15+ years of hands-on .NET. Designed the backend that turned bs-one into a multi-tenant Microsoft 365 SaaS on Azure, used by 6,000+ concurrent users.">
+  <meta property="og:title" content="Mayur Paghdal · Technical Lead, .NET Architecture">
+  <meta property="og:description" content="C#, ASP.NET Core, Azure & SQL Server. Multi-tenant SaaS for 6,000+ concurrent users.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
         <div class="mono" aria-hidden="true">MP</div>
         <div class="side-id">
           <p class="side-name">Mayur Paghdal</p>
-          <p class="side-role">Solutions Architect</p>
+          <p class="side-role">Technical Lead · .NET Architecture</p>
         </div>
         <div class="top-links">
           <a href="https://www.linkedin.com/in/mayurpx/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
@@ -37,7 +37,7 @@
           <a href="mailto:mayurpaghdal@gmail.com" aria-label="Email" title="Email">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
           </a>
-          <a href="assets/resume/Mayur-Paghdal-Solutions-Architect.pdf" download aria-label="Download résumé" title="Download résumé">
+          <a href="assets/resume/Mayur-Paghdal-Resume.pdf" download aria-label="Download résumé" title="Download résumé">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
           </a>
         </div>
@@ -55,7 +55,7 @@
       </nav>
 
       <div class="side-foot">
-        <a class="btn btn-solid" href="assets/resume/Mayur-Paghdal-Solutions-Architect.pdf" download>Download résumé</a>
+        <a class="btn btn-solid" href="assets/resume/Mayur-Paghdal-Resume.pdf" download>Download résumé</a>
         <div class="side-links">
           <a href="https://www.linkedin.com/in/mayurpx/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="mailto:mayurpaghdal@gmail.com">Email</a>
@@ -70,122 +70,124 @@
       <!-- ABOUT -->
       <section id="about" class="hero">
         <div class="hero-text">
-          <p class="eyebrow">Solutions Architect · Technical Lead · Microsoft Azure</p>
-          <h1>I design and build <em>multi-tenant SaaS</em> on Azure.</h1>
+          <p class="eyebrow">Technical Lead · .NET Architecture · C#, ASP.NET Core, Azure &amp; SQL Server</p>
+          <h1>I design and build <em>multi-tenant SaaS</em> on .NET and Azure.</h1>
           <p class="lead">
-            15+ years in software, from ERP developer to Technical Lead. At baliosoft I own the architecture of
-            <strong>bs-one</strong>, a multi-tenant Microsoft 365 productivity SaaS sold on Microsoft Marketplace.
-            It runs for <strong>6,000+ concurrent users</strong>, in our cloud and on customers' own servers.
+            15+ years of hands-on .NET. I joined baliosoft when <strong>bs-one</strong> was a standalone system
+            installed separately for every customer, and designed the whole backend that turned it into a
+            multi-tenant Microsoft 365 SaaS on Azure. It now serves <strong>6,000+ concurrent users</strong>, and its
+            desktop app, bs-one Uplift, is live on Microsoft Marketplace and the Microsoft Store.
           </p>
           <p class="lead">
-            Day to day I work with clients and leadership on requirements, write the design and decision records,
-            review code, and lead a team of 11 engineers.
+            I make the main technical calls on service boundaries, data model, API contracts, security and hosting
+            cost, still write core code, and lead a team of 11.
           </p>
         </div>
 
         <!-- Illustration: a typical connected SaaS system -->
         <figure class="hero-art">
           <svg viewBox="0 0 520 480" role="img" aria-labelledby="heroArtTitle">
-            <title id="heroArtTitle">A connected SaaS system: web, desktop and mobile apps and Microsoft 365 talk to APIs in the Azure cloud, which hand work to background jobs and store data in a database per tenant.</title>
+            <title id="heroArtTitle">A connected SaaS system: web, desktop and mobile front ends share one set of APIs in the Azure cloud. The APIs read and write a database per tenant. Background jobs, running as Azure Functions or as scheduled tasks on a server, sync with Microsoft 365 and work on the databases directly.</title>
 
             <!-- links (drawn first, under the boxes) -->
             <g class="ha-links">
-              <path id="lkWeb" d="M140,64 C205,64 245,92 245,150"/>
-              <path id="lkM365" d="M380,50 C320,50 285,92 285,150"/>
-              <path id="lkDesk" d="M75,382 V177 H200"/>
-              <path id="lkMob" d="M456,370 V177 H320"/>
-              <path id="lkJobs" d="M240,204 V232 H190 V262"/>
-              <path id="lkDb" d="M280,204 V232 H345 V250"/>
+              <path id="lkFe" d="M202,130 V182"/>
+              <path id="lkDb" d="M202,236 V340"/>
+              <path id="lkFn" d="M272,282 H262 V384 H252"/>
+              <path id="lkTs" d="M272,352 H262 V384 H252"/>
+              <path id="lkM365" d="M461,96 V282 H396"/>
             </g>
 
             <!-- moving packets -->
             <g class="ha-packets">
-              <circle r="4"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#lkWeb"/></animateMotion></circle>
-              <circle r="4"><animateMotion dur="3.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#lkM365"/></animateMotion></circle>
-              <circle r="4"><animateMotion dur="3.4s" repeatCount="indefinite"><mpath href="#lkDesk"/></animateMotion></circle>
-              <circle r="4"><animateMotion dur="3s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#lkMob"/></animateMotion></circle>
-              <circle r="3.5" class="alt"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#lkJobs"/></animateMotion></circle>
-              <circle r="3.5" class="alt"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#lkDb"/></animateMotion></circle>
+              <circle r="4"><animateMotion dur="1.6s" repeatCount="indefinite"><mpath href="#lkFe"/></animateMotion></circle>
+              <circle r="4"><animateMotion dur="1.6s" begin="0.8s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#lkFe"/></animateMotion></circle>
+              <circle r="4"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#lkDb"/></animateMotion></circle>
+              <circle r="3.5" class="alt"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#lkFn"/></animateMotion></circle>
+              <circle r="3.5" class="alt"><animateMotion dur="1.8s" begin="0.6s" repeatCount="indefinite"><mpath href="#lkTs"/></animateMotion></circle>
+              <circle r="3.5" class="alt"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#lkM365"/></animateMotion></circle>
+            </g>
+
+            <!-- Front ends: three form factors of one client layer -->
+            <rect class="ha-group" x="12" y="12" width="380" height="118" rx="14"/>
+            <text class="ha-tag" x="28" y="31">FRONT ENDS</text>
+
+            <g class="ha-box">
+              <rect x="42" y="42" width="96" height="62" rx="8"/>
+              <path class="ha-thin" d="M42,56 H138"/>
+              <circle class="ha-dot" cx="51" cy="49" r="2.2"/><circle class="ha-dot" cx="58" cy="49" r="2.2"/><circle class="ha-dot" cx="65" cy="49" r="2.2"/>
+              <rect class="ha-fill" x="52" y="66" width="40" height="6" rx="3"/>
+              <rect class="ha-fill2" x="52" y="78" width="76" height="4" rx="2"/>
+              <rect class="ha-fill2" x="52" y="88" width="58" height="4" rx="2"/>
+            </g>
+            <text class="ha-cap" x="90" y="122">Web</text>
+
+            <g class="ha-box">
+              <rect x="156" y="44" width="92" height="48" rx="6"/>
+              <path class="ha-thin" d="M194,92 L191,102 H213 L210,92"/>
+              <rect class="ha-fill" x="166" y="54" width="30" height="6" rx="3"/>
+              <rect class="ha-fill2" x="166" y="66" width="72" height="4" rx="2"/>
+              <rect class="ha-fill2" x="166" y="76" width="56" height="4" rx="2"/>
+            </g>
+            <text class="ha-cap" x="202" y="122">Desktop</text>
+
+            <g class="ha-box">
+              <rect x="295" y="38" width="38" height="70" rx="7"/>
+              <path class="ha-thin" d="M308,45 H320"/>
+              <rect class="ha-fill" x="302" y="56" width="20" height="5" rx="2.5"/>
+              <rect class="ha-fill2" x="302" y="67" width="24" height="4" rx="2"/>
+              <rect class="ha-fill2" x="302" y="77" width="18" height="4" rx="2"/>
+              <circle class="ha-dot" cx="314" cy="100" r="2.5"/>
+            </g>
+            <text class="ha-cap" x="314" y="122">Mobile</text>
+
+            <!-- Microsoft 365 (external) -->
+            <g class="ha-box ha-ext">
+              <rect x="408" y="40" width="106" height="56" rx="9"/>
+              <text class="ha-t2" x="461" y="64">Microsoft 365</text>
+              <text class="ha-sub" x="461" y="82">Graph · Dynamics</text>
             </g>
 
             <!-- Azure cloud boundary -->
-            <rect class="ha-cloud" x="110" y="118" width="300" height="234" rx="22"/>
-            <path class="ha-glyph" d="M206,374 h26 a7,7 0 0 0 0,-14 a10,10 0 0 0 -19,-3 a7,7 0 0 0 -7,17 z"/>
-            <text class="ha-label" x="240" y="373">AZURE CLOUD</text>
+            <rect class="ha-cloud" x="12" y="150" width="388" height="318" rx="20"/>
+            <path class="ha-glyph" d="M28,454 h26 a7,7 0 0 0 0,-14 a10,10 0 0 0 -19,-3 a7,7 0 0 0 -7,17 z"/>
+            <text class="ha-label" x="62" y="452">AZURE CLOUD</text>
 
-            <!-- APIs -->
+            <!-- APIs (shared by every front end) -->
             <g class="ha-box">
-              <rect x="200" y="150" width="120" height="54" rx="10"/>
-              <text class="ha-code" x="229" y="183">{ }</text>
-              <text x="276" y="183">APIs</text>
-            </g>
-
-            <!-- Background jobs -->
-            <g class="ha-box">
-              <rect x="128" y="262" width="124" height="70" rx="10"/>
-              <g transform="translate(190 286)">
-                <g class="ha-gear">
-                  <circle r="9"/><circle r="3.2"/>
-                  <path d="M0,-13 V-9 M0,9 V13 M-13,0 H-9 M9,0 H13 M-9.2,-9.2 L-6.4,-6.4 M6.4,6.4 L9.2,9.2 M-9.2,9.2 L-6.4,6.4 M6.4,-6.4 L9.2,-9.2"/>
-                </g>
-              </g>
-              <text x="190" y="320">Background jobs</text>
+              <rect x="127" y="182" width="150" height="54" rx="10"/>
+              <text class="ha-code" x="150" y="215">{ }</text>
+              <text x="214" y="208">APIs</text>
+              <text class="ha-sub" x="214" y="225">one for every app</text>
             </g>
 
             <!-- Tenant databases -->
             <g class="ha-db">
-              <path d="M318,262 V300 A28,7 0 0 0 374,300 V262"/><ellipse cx="346" cy="262" rx="28" ry="7"/>
-              <path d="M300,272 V310 A28,7 0 0 0 356,310 V272"/><ellipse cx="328" cy="272" rx="28" ry="7"/>
-              <path d="M336,272 V310 A28,7 0 0 0 392,310 V272"/><ellipse cx="364" cy="272" rx="28" ry="7"/>
+              <path d="M174,352 V390 A28,7 0 0 0 230,390 V352"/><ellipse cx="202" cy="352" rx="28" ry="7"/>
+              <path d="M156,362 V400 A28,7 0 0 0 212,400 V362"/><ellipse cx="184" cy="362" rx="28" ry="7"/>
+              <path d="M192,362 V400 A28,7 0 0 0 248,400 V362"/><ellipse cx="220" cy="362" rx="28" ry="7"/>
             </g>
-            <text class="ha-cap" x="346" y="336">DB per tenant</text>
+            <text class="ha-cap" x="202" y="428">DB per tenant</text>
 
-            <!-- Web app (browser window) -->
+            <!-- Background jobs: two ways they run, both straight to the DB -->
+            <text class="ha-tag" x="272" y="246">BACKGROUND JOBS</text>
             <g class="ha-box">
-              <rect x="12" y="22" width="128" height="84" rx="9"/>
-              <path class="ha-thin" d="M12,40 H140"/>
-              <circle class="ha-dot" cx="24" cy="31" r="2.6"/><circle class="ha-dot" cx="33" cy="31" r="2.6"/><circle class="ha-dot" cx="42" cy="31" r="2.6"/>
-              <rect class="ha-fill" x="24" y="52" width="50" height="7" rx="3"/>
-              <rect class="ha-fill2" x="24" y="66" width="104" height="5" rx="2.5"/>
-              <rect class="ha-fill2" x="24" y="78" width="80" height="5" rx="2.5"/>
+              <rect x="272" y="256" width="124" height="52" rx="9"/>
+              <text class="ha-t2" x="334" y="279">Azure Functions</text>
+              <text class="ha-sub" x="334" y="296">microservices</text>
             </g>
-            <text class="ha-cap" x="76" y="124">Web app</text>
-
-            <!-- Microsoft 365 / external services -->
-            <g class="ha-box ha-ext">
-              <rect x="380" y="22" width="128" height="56" rx="9"/>
-              <text x="444" y="47">Microsoft 365</text>
-              <text class="ha-sub" x="444" y="64">Graph · Dynamics</text>
-            </g>
-
-            <!-- Desktop app (monitor) -->
             <g class="ha-box">
-              <rect x="20" y="382" width="110" height="68" rx="7"/>
-              <path class="ha-thin" d="M62,450 L58,466 H92 L88,450"/>
-              <rect class="ha-fill" x="32" y="394" width="38" height="6" rx="3"/>
-              <rect class="ha-fill2" x="32" y="408" width="86" height="5" rx="2.5"/>
-              <rect class="ha-fill2" x="32" y="419" width="66" height="5" rx="2.5"/>
-              <rect class="ha-fill2" x="32" y="430" width="76" height="5" rx="2.5"/>
+              <rect x="272" y="326" width="124" height="52" rx="9"/>
+              <text class="ha-t2" x="334" y="349">Task scheduler</text>
+              <text class="ha-sub" x="334" y="366">on the server</text>
             </g>
-            <text class="ha-cap" x="152" y="425" text-anchor="start">Desktop app</text>
-
-            <!-- Mobile app (phone) -->
-            <g class="ha-box">
-              <rect x="430" y="370" width="54" height="96" rx="10"/>
-              <path class="ha-thin" d="M449,378 H465"/>
-              <rect class="ha-fill" x="439" y="390" width="26" height="6" rx="3"/>
-              <rect class="ha-fill2" x="439" y="403" width="36" height="5" rx="2.5"/>
-              <rect class="ha-fill2" x="439" y="414" width="30" height="5" rx="2.5"/>
-              <circle class="ha-dot" cx="457" cy="455" r="3"/>
-            </g>
-            <text class="ha-cap" x="418" y="425" text-anchor="end">Mobile app</text>
           </svg>
         </figure>
 
         <dl class="metrics">
-          <div><dt>15+</dt><dd>years in software</dd></div>
+          <div><dt>15+</dt><dd>years of hands-on .NET</dd></div>
           <div><dt>6,000+</dt><dd>concurrent users on bs-one</dd></div>
-          <div><dt>~70%</dt><dd>less time per design iteration using AI tools</dd></div>
+          <div><dt>20+</dt><dd>background services in production</dd></div>
           <div><dt>11</dt><dd>engineers in the team I lead</dd></div>
         </dl>
       </section>
@@ -199,49 +201,49 @@
 
         <div class="pillars">
           <div class="pillar">
-            <h3>Architecture &amp; design</h3>
+            <h3>Architecture</h3>
             <ul>
-              <li>SaaS &amp; multi-tenant architecture</li>
-              <li>Cloud-native &amp; event-driven design</li>
-              <li>Microsoft 365 &amp; Dynamics 365 integration</li>
-              <li>Identity &amp; security architecture</li>
-              <li>Hybrid cloud &amp; on-premise delivery</li>
-              <li>Scalability, resilience &amp; reliability</li>
+              <li>Solution architecture &amp; system design</li>
+              <li>Multi-tenant SaaS</li>
+              <li>Microservices &amp; event-driven design</li>
+              <li>Domain-driven design</li>
+              <li>REST API design</li>
+              <li>Design patterns &amp; OOP</li>
             </ul>
           </div>
           <div class="pillar">
-            <h3>Strategy &amp; governance</h3>
+            <h3>Delivery</h3>
             <ul>
-              <li>Requirement discovery &amp; solution shaping</li>
-              <li>Technology roadmaps</li>
-              <li>Architecture decision records</li>
-              <li>Engineering standards</li>
-              <li>Release governance</li>
-              <li>Trade-off &amp; risk analysis</li>
+              <li>Design &amp; decision records</li>
+              <li>Code &amp; design reviews</li>
+              <li>Performance tuning</li>
+              <li>Azure DevOps CI/CD</li>
+              <li>Database release process</li>
+              <li>Agile / Scrum</li>
             </ul>
           </div>
           <div class="pillar">
             <h3>Leadership</h3>
             <ul>
-              <li>Client &amp; stakeholder discussions</li>
-              <li>Cross-functional team leadership</li>
-              <li>Mentoring junior engineers</li>
-              <li>Agile delivery</li>
-              <li>AI-assisted SDLC</li>
+              <li>Mentoring &amp; 1:1s</li>
+              <li>Pair programming</li>
+              <li>Hiring &amp; onboarding</li>
+              <li>Client &amp; stakeholder communication</li>
+              <li>AI tools in the team's workflow</li>
             </ul>
           </div>
         </div>
 
         <h3 class="mini-h">Toolkit</h3>
         <div class="toolkit">
-          <div class="tk-row"><span class="tk-label">.NET</span><p>.NET / .NET Core · ASP.NET Core &amp; MVC · Web API · EF Core · WPF · WinUI 3 · UWP · MAUI / Xamarin</p></div>
-          <div class="tk-row"><span class="tk-label">Azure</span><p>Functions · Service Bus · Storage · Notification Hub · Key Vault · Redis · App Insights · VMs · CDN</p></div>
-          <div class="tk-row"><span class="tk-label">Delivery</span><p>Azure DevOps · CI/CD · Git · Infrastructure as Code · Proofs of concept</p></div>
-          <div class="tk-row"><span class="tk-label">Data</span><p>SQL Server · SSRS · SQLite · MySQL · data warehousing · query &amp; DB performance tuning</p></div>
-          <div class="tk-row"><span class="tk-label">Identity</span><p>Microsoft Entra ID · SSO · Microsoft Graph · SharePoint · Dynamics 365</p></div>
-          <div class="tk-row"><span class="tk-label">Front end</span><p>React · JavaScript · jQuery · Bootstrap · HTML5 · CSS3</p></div>
-          <div class="tk-row"><span class="tk-label">AI</span><p>Claude with MCP · GitHub Copilot · Azure Cognitive Services</p></div>
-          <div class="tk-row"><span class="tk-label">Design</span><p>Figma · Photoshop · Illustrator · CorelDRAW</p></div>
+          <div class="tk-row"><span class="tk-label">.NET</span><p>C# · .NET Core · .NET Framework · ASP.NET Core Web API · ASP.NET Core MVC · EF Core · Dapper · Background services</p></div>
+          <div class="tk-row"><span class="tk-label">Azure</span><p>Functions · Service Bus · Queues · Storage · Key Vault · Redis Cache · Notification Hubs · Application Insights · Communication Services · VMs · CDN</p></div>
+          <div class="tk-row"><span class="tk-label">Messaging</span><p>SignalR · idempotent, retry-safe queues · Graph change notifications · delta sync</p></div>
+          <div class="tk-row"><span class="tk-label">Security</span><p>Entra ID (SSO, admin consent) · per-app permissions · short-lived signed keys · row-level security</p></div>
+          <div class="tk-row"><span class="tk-label">Data</span><p>SQL Server (data modelling, query tuning) · database per tenant · Visual Studio Schema Compare · SSRS · SQLite · MySQL · PostgreSQL (basic)</p></div>
+          <div class="tk-row"><span class="tk-label">Apps</span><p>WinUI 3 · WPF · Xamarin / MAUI · JavaScript · jQuery · HTML5 · CSS3 · Bootstrap</p></div>
+          <div class="tk-row"><span class="tk-label">Integration</span><p>Microsoft Graph · Dynamics 365 · Azure DevOps APIs</p></div>
+          <div class="tk-row"><span class="tk-label">AI</span><p>GitHub Copilot (custom .NET skills) · Claude (shared project, Azure &amp; Figma MCP) · prompt engineering · AI PR reviews</p></div>
         </div>
       </section>
 
@@ -262,24 +264,26 @@
             <span class="pill">6,000+ concurrent users</span>
           </div>
           <p class="case-intro">
-            Web, desktop and admin apps that pull work from Microsoft 365, Dynamics 365 and Azure DevOps into one
-            place for planning, time tracking and collaboration. Pick a topic to see which parts of the system it covers.
+            A multilingual suite (admin portal, web tracker, desktop app, mobile app, operations console) that brings
+            tasks from Microsoft 365, Dynamics 365 and Azure DevOps into one place. Pick a topic to see which parts of
+            the system it covers.
           </p>
 
           <div class="facets" role="tablist" aria-label="Architecture topics">
-            <button role="tab" data-facet="tenancy" aria-selected="true">Tenancy &amp; isolation</button>
+            <button role="tab" data-facet="tenancy" aria-selected="true">Tenancy</button>
             <button role="tab" data-facet="gtm" aria-selected="false">Marketplace onboarding</button>
-            <button role="tab" data-facet="identity" aria-selected="false">Identity &amp; security</button>
-            <button role="tab" data-facet="integration" aria-selected="false">Integrations</button>
+            <button role="tab" data-facet="identity" aria-selected="false">Security</button>
+            <button role="tab" data-facet="integration" aria-selected="false">Event-driven sync</button>
             <button role="tab" data-facet="channels" aria-selected="false">Client apps</button>
-            <button role="tab" data-facet="reliability" aria-selected="false">Reliability &amp; releases</button>
+            <button role="tab" data-facet="hosting" aria-selected="false">Hosting cost</button>
+            <button role="tab" data-facet="reliability" aria-selected="false">Releases &amp; stability</button>
           </div>
 
           <div class="diagram-wrap">
             <p class="scroll-hint">Scroll sideways to see the whole diagram →</p>
             <div class="diagram-scroll">
               <svg class="diagram" id="diagram" viewBox="0 0 820 490" role="img" aria-labelledby="dgTitle">
-                <title id="dgTitle">Simplified bs-one architecture: client apps, Entra ID, shared APIs, Graph sync, Azure Functions, Service Bus, Microsoft Marketplace, tenant catalogue, per-tenant databases and analytics warehouse.</title>
+                <title id="dgTitle">Simplified bs-one architecture: five client apps on shared APIs, Entra ID, Graph sync, Azure Functions, Service Bus, Microsoft Marketplace, Key Vault, Redis, a tenant catalogue and a database per tenant.</title>
                 <defs>
                   <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                     <path d="M0,0 L10,5 L0,10 z" class="arrowhead"/>
@@ -288,10 +292,11 @@
 
                 <!-- edges -->
                 <g class="edges">
-                  <path class="edge" data-k="c1" d="M170,104 C210,104 210,195 250,195" marker-end="url(#arrow)"/>
-                  <path class="edge" data-k="c2" d="M170,170 C210,170 210,195 250,195" marker-end="url(#arrow)"/>
-                  <path class="edge" data-k="c3" d="M170,236 C210,236 210,195 250,195" marker-end="url(#arrow)"/>
-                  <path class="edge" data-k="c4" d="M170,302 C210,302 210,195 250,195" marker-end="url(#arrow)"/>
+                  <path class="edge" data-k="c1" d="M170,98 C210,98 210,195 250,195" marker-end="url(#arrow)"/>
+                  <path class="edge" data-k="c2" d="M170,152 C210,152 210,195 250,195" marker-end="url(#arrow)"/>
+                  <path class="edge" data-k="c3" d="M170,206 C210,206 210,195 250,195" marker-end="url(#arrow)"/>
+                  <path class="edge" data-k="c4" d="M170,260 C210,260 210,195 250,195" marker-end="url(#arrow)"/>
+                  <path class="edge" data-k="c5" d="M170,314 C210,314 210,195 250,195" marker-end="url(#arrow)"/>
                   <path class="edge" data-k="entra-api" d="M335,76 V130" marker-end="url(#arrow)"/>
                   <path class="edge" data-k="api-cat" d="M335,260 V398" marker-end="url(#arrow)"/>
                   <path class="edge" data-k="api-db" d="M420,230 H450 V432 H478" marker-end="url(#arrow)"/>
@@ -301,26 +306,29 @@
                   <path class="edge" data-k="q-fn" d="M565,230 V186" marker-end="url(#arrow)"/>
                   <path class="edge" data-k="fn-db" d="M650,158 H670 V408 H638" marker-end="url(#arrow)"/>
                   <path class="edge" data-k="cat-db" d="M420,456 H478" marker-end="url(#arrow)"/>
-                  <path class="edge" data-k="db-wh" d="M622,448 H688" marker-end="url(#arrow)"/>
                 </g>
 
                 <text class="grp" x="20" y="64">CLIENT APPS</text>
                 <text class="grp" x="250" y="388">DATA</text>
+                <text class="grp" x="690" y="322">SHARED SERVICES</text>
 
-                <g class="node" data-k="cl-admin"><rect x="20" y="80" width="150" height="48" rx="8"/><text x="95" y="109">Admin portal</text></g>
-                <g class="node" data-k="cl-web"><rect x="20" y="146" width="150" height="48" rx="8"/><text x="95" y="175">Web tracker</text></g>
-                <g class="node" data-k="cl-desk"><rect x="20" y="212" width="150" height="48" rx="8"/><text x="95" y="234">Windows app</text><text class="sub" x="95" y="250">WinUI 3 · push</text></g>
-                <g class="node" data-k="cl-ops"><rect x="20" y="278" width="150" height="48" rx="8"/><text x="95" y="307">Ops console</text></g>
+                <g class="node" data-k="cl-admin"><rect x="20" y="76" width="150" height="44" rx="8"/><text x="95" y="103">Admin portal</text></g>
+                <g class="node" data-k="cl-web"><rect x="20" y="130" width="150" height="44" rx="8"/><text x="95" y="157">Web tracker</text></g>
+                <g class="node" data-k="cl-desk"><rect x="20" y="184" width="150" height="44" rx="8"/><text x="95" y="203">Desktop app</text><text class="sub" x="95" y="219">WinUI 3 · push</text></g>
+                <g class="node" data-k="cl-mob"><rect x="20" y="238" width="150" height="44" rx="8"/><text x="95" y="265">Mobile app</text></g>
+                <g class="node" data-k="cl-ops"><rect x="20" y="292" width="150" height="44" rx="8"/><text x="95" y="319">Ops console</text></g>
 
-                <g class="node" data-k="entra"><rect x="250" y="20" width="170" height="56" rx="8"/><text x="335" y="44">Microsoft Entra ID</text><text class="sub" x="335" y="62">SSO · per-app authz</text></g>
-                <g class="node" data-k="api"><rect x="250" y="130" width="170" height="130" rx="8"/><text x="335" y="180">Shared APIs</text><text class="sub" x="335" y="200">.NET · EN / DE</text><text class="sub" x="335" y="218">signed, time-limited keys</text></g>
+                <g class="node" data-k="entra"><rect x="250" y="20" width="170" height="56" rx="8"/><text x="335" y="44">Microsoft Entra ID</text><text class="sub" x="335" y="62">SSO · admin consent</text></g>
+                <g class="node" data-k="api"><rect x="250" y="130" width="170" height="130" rx="8"/><text x="335" y="180">Shared APIs</text><text class="sub" x="335" y="200">ASP.NET Core · SignalR</text><text class="sub" x="335" y="218">short-lived signed keys</text></g>
 
                 <g class="node" data-k="graph"><rect x="480" y="20" width="170" height="56" rx="8"/><text x="565" y="44">Graph sync</text><text class="sub" x="565" y="62">change notifications · delta</text></g>
-                <g class="node" data-k="fn"><rect x="480" y="130" width="170" height="56" rx="8"/><text x="565" y="154">Azure Functions</text><text class="sub" x="565" y="172">20+ scheduled services</text></g>
+                <g class="node" data-k="fn"><rect x="480" y="130" width="170" height="56" rx="8"/><text x="565" y="154">Background services</text><text class="sub" x="565" y="172">20+ · Functions · dedup</text></g>
                 <g class="node" data-k="queue"><rect x="480" y="230" width="170" height="56" rx="8"/><text x="565" y="254">Service Bus queue</text><text class="sub" x="565" y="272">idempotent · retry-safe</text></g>
 
                 <g class="node ext" data-k="m365"><rect x="690" y="20" width="120" height="170" rx="8"/><text x="750" y="44">Microsoft 365</text><text class="sub" x="750" y="70">Outlook</text><text class="sub" x="750" y="88">Planner · To Do</text><text class="sub" x="750" y="106">SharePoint</text><text class="sub" x="750" y="124">Dynamics 365</text><text class="sub" x="750" y="142">Azure DevOps</text><text class="tag" x="750" y="174">EXTERNAL</text></g>
                 <g class="node ext" data-k="market"><rect x="690" y="230" width="120" height="56" rx="8"/><text x="750" y="254">Marketplace</text><text class="sub" x="750" y="272">AppSource</text></g>
+                <g class="node" data-k="kv"><rect x="690" y="334" width="120" height="46" rx="8"/><text x="750" y="355">Key Vault</text><text class="sub" x="750" y="371">secrets</text></g>
+                <g class="node" data-k="redis"><rect x="690" y="392" width="120" height="46" rx="8"/><text x="750" y="413">Redis</text><text class="sub" x="750" y="429">cache</text></g>
 
                 <g class="node cyl" data-k="cat">
                   <path d="M250,410 V462 A85,10 0 0 0 420,462 V410"/><ellipse cx="335" cy="410" rx="85" ry="10"/>
@@ -332,50 +340,46 @@
                   <path d="M480,418 V470 A70,9 0 0 0 620,470 V418"/><ellipse cx="550" cy="418" rx="70" ry="9"/>
                   <text x="550" y="450">DB per tenant</text>
                 </g>
-                <g class="node cyl" data-k="wh">
-                  <path d="M690,410 V462 A60,10 0 0 0 810,462 V410"/><ellipse cx="750" cy="410" rx="60" ry="10"/>
-                  <text x="750" y="444">Analytics</text><text class="sub" x="750" y="460">warehouse</text>
-                </g>
               </svg>
             </div>
 
             <div class="facet-text" id="facetText" role="tabpanel" aria-live="polite">
-              <h4 id="facetTitle">Tenancy &amp; data isolation</h4>
+              <h4 id="facetTitle">Tenancy</h4>
               <p id="facetBody"></p>
             </div>
           </div>
 
-          <p class="stack"><span>Platform</span> Azure (Functions, Service Bus, Storage, Notification Hub, Key Vault, Redis, App Insights) · .NET · React · WinUI 3 · SQL Server · Microsoft Graph · Entra ID</p>
+          <p class="stack"><span>Platform</span> C# · ASP.NET Core · SignalR · WinUI 3 · SQL Server · Azure (Functions, Service Bus, Queues, Storage, Key Vault, Redis, Notification Hubs, Application Insights) · Microsoft Graph · Entra ID</p>
         </article>
 
         <article class="case">
           <div class="case-head">
             <div>
               <h3>Staccker</h3>
-              <p class="case-sub">Business management &amp; ERP suite for SMEs</p>
+              <p class="case-sub">Desktop ERP for small businesses</p>
               <p class="case-meta">Infinium Multitech · 2016 – 2020</p>
             </div>
-            <span class="pill">4 industry editions, 1 codebase</span>
+            <span class="pill">Industry editions, 1 codebase</span>
           </div>
           <p class="case-intro">
-            Desktop ERP for small and mid-sized businesses: multi-company, multi-location, with inventory, sales,
-            purchasing, accounting and receivables.
+            Inventory, sales, purchase and accounts for small businesses, across several companies and locations.
+            I designed and built it.
           </p>
           <div class="trio">
             <div>
               <h4>Plugin-based core</h4>
-              <p>Tailoring, servicing, rental and diamond-trading editions all ran on one plugin-based core instead of separate codebases.</p>
+              <p>Industry editions such as tailoring, rental and diamond trading ran on one codebase instead of separate products.</p>
             </div>
             <div>
               <h4>Beyond the desktop</h4>
-              <p>Mobile companion app, cloud backup, calendar and contact sync, SMS and email notifications, and barcode-based stock handling.</p>
+              <p>Barcode-based stock operations across companies and locations, a Xamarin mobile app, cloud backup, and SMS and email alerts.</p>
             </div>
             <div>
               <h4>Shared framework</h4>
-              <p>In-house framework for data access, cloud connectors, UI controls and charts, reused across the company's products, plus a guided installer for on-premise SQL Server.</p>
+              <p>An in-house framework (data access, cloud connectors, WPF controls, charts) used across the company's products.</p>
             </div>
           </div>
-          <p class="stack"><span>Platform</span> WPF · .NET Framework · SQL Server · Xamarin · Web Services · Google &amp; OneDrive APIs</p>
+          <p class="stack"><span>Platform</span> WPF · .NET Framework · SQL Server · Xamarin</p>
         </article>
       </section>
 
@@ -393,16 +397,18 @@
               <h3>Technical Lead</h3>
               <p class="tl-org">baliosoft Solutions Pvt. Ltd. · Ahmedabad</p>
               <ul>
-                <li>Own the architecture of bs-one end to end: target design, roadmap and production rollout for 6,000+ concurrent users.</li>
-                <li>Main technical contact for leadership and customers. Turned goals such as the Microsoft Marketplace launch, enterprise data isolation and on-premise hosting into phased roadmaps and delivery plans.</li>
-                <li>Set up architecture governance across six product repositories: per-feature design and decision records, engineering standards, and a controlled release process for every tenant environment.</li>
+                <li>Own the architecture of bs-one across six product repositories, including the backend that turned a standalone system installed for every customer into a multi-tenant SaaS. Still write its core production code.</li>
+                <li>Make the main technical calls (service boundaries, data model, API contracts, security) and write a design and decision record for each major feature before any code is written.</li>
+                <li>Design the Azure setup (Functions, queues, Service Bus, VMs, Redis) to keep hosting cost down without losing reliability, with one codebase for cloud and on-premise tenants.</li>
               </ul>
               <details>
-                <summary>3 more</summary>
+                <summary>5 more</summary>
                 <ul>
-                  <li>Brought AI tools (Claude with MCP, GitHub Copilot) into requirement analysis, solution design and automated pull-request reviews in Azure DevOps. Design iterations now take about 70% less time.</li>
-                  <li>Lead a cross-functional team of 11 engineers across several projects and mentor juniors until they work independently.</li>
-                  <li>Set up CI/CD in Azure DevOps; run code reviews, architecture audits and performance tuning on critical modules.</li>
+                  <li>Turn business goals such as the Microsoft Marketplace launch and data isolation for enterprise tenants into delivery plans. Main technical contact for clients and leadership.</li>
+                  <li>Handle production issues such as thread-pool starvation and connection-pool exhaustion across the API and 20+ background services, and maintain health checks on key endpoints.</li>
+                  <li>Run releases for every tenant through Azure DevOps CI/CD, developer testing, then QA in a separate TEST environment. Database changes go out as one final change set, then random tenant databases are compared to confirm.</li>
+                  <li>Lead a team of 11 through sprints, code and design reviews, 1:1s and pairing, and help with hiring.</li>
+                  <li>Drive the team's use of GitHub Copilot and Claude (shared project with team code standards, Azure and Figma MCP, custom .NET skills) in design and PR reviews, which has cut design iteration time by nearly 70%.</li>
                 </ul>
               </details>
             </div>
@@ -413,9 +419,10 @@
               <h3>Technical Project Manager</h3>
               <p class="tl-org">Codezee Solutions Pvt. Ltd. · Surat</p>
               <ul>
-                <li>Defined the base architecture, module design and integration approach for client solutions on Azure and on-premise.</li>
-                <li>Ran technical discussions with clients and turned their requirements into scoped solutions and delivery plans.</li>
-                <li>Introduced coding and QA standards that the teams adopted, which brought defect rates down noticeably.</li>
+                <li>Defined the base architecture and code structure for client projects (.NET Core, MVC, Web API, SQL Server) on Azure and on-premise, and led the architecture of CA Master, a SaaS platform.</li>
+                <li>RMI: transport management system for overseas deliveries, with document flow and automatic signatures.</li>
+                <li>DiamX: cloud ERP for diamond inventory. Owned query tuning, SSRS reports and database upkeep.</li>
+                <li>Managed UI/UX, frontend, backend and database teams, and created coding and QA rules that cut defects.</li>
               </ul>
             </div>
           </li>
@@ -425,19 +432,30 @@
               <h3>Team Leader</h3>
               <p class="tl-org">Infinium Multitech · Surat</p>
               <ul>
-                <li>Architected and built Staccker, the company's desktop ERP, on a plugin-based core that supported several industry editions.</li>
-                <li>Designed desktop, mobile and web-service architectures and a shared in-house framework used across the company's products.</li>
-                <li>Led a team of 5 engineers and introduced Agile practices in the department.</li>
+                <li>Designed and built Staccker, a desktop ERP for small businesses, on a plugin-based core so industry editions ran on one codebase.</li>
+                <li>Wrote an in-house framework (data access, cloud connectors, WPF controls, charts) used across products, plus a Xamarin mobile app and barcode stock operations.</li>
+                <li>Led a team of 5 engineers and moved the department to Agile.</li>
               </ul>
             </div>
           </li>
           <li>
-            <div class="tl-when"><span>2011</span><small>Aug 2011 – Dec 2015</small></div>
+            <div class="tl-when"><span>2013</span><small>Dec 2013 – Dec 2015</small></div>
             <div class="tl-body">
-              <h3>Software Engineer</h3>
-              <p class="tl-org">Inkey Solutions, Possible Technologies, Cygnus Softtech · Surat</p>
+              <h3>Assistant Software Engineer</h3>
+              <p class="tl-org">Inkey Solutions · Surat</p>
               <ul>
-                <li>Built ERP systems, web applications and databases, including custom UI components and backend performance work.</li>
+                <li>Contract developer for HM and Sons Diamond Manufacturing: built DIF (6 desktop apps) and royaldiam.co.in.</li>
+                <li>Delivered one full application in 1 month against a 2-month deadline.</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="tl-when"><span>2011</span><small>Aug 2011 – Aug 2013</small></div>
+            <div class="tl-body">
+              <h3>Junior Software Engineer</h3>
+              <p class="tl-org">Possible Technologies, Cygnus Softtech · Surat</p>
+              <ul>
+                <li>Built and maintained ASP.NET web applications and UI components, and looked after SQL Server databases.</li>
               </ul>
             </div>
           </li>
@@ -446,7 +464,7 @@
         <div class="edu">
           <h3 class="mini-h">Education</h3>
           <div class="edu-grid">
-            <div><p class="edu-deg">B.Tech, Computer Science</p><p class="muted">Yagnavalkya Inst. of Technology (RTU), Jaipur · 2016</p></div>
+            <div><p class="edu-deg">B.Tech, Computer Science</p><p class="muted">Yagnavalkya Inst. of Technology (RTU), Jaipur · 2016 · part-time, alongside full-time work</p></div>
             <div><p class="edu-deg">Diploma, Computer Engineering</p><p class="muted">L.J. Polytechnic (GTU), Ahmedabad · 2011</p></div>
           </div>
         </div>

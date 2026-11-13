@@ -188,15 +188,14 @@ section { padding: 88px 0 24px; }
 .hero-art text.ha-sub { font: 400 11px var(--f-mono); fill: var(--muted); }
 .hero-art text.ha-cap { font: 500 12px var(--f-mono); fill: var(--muted); }
 .hero-art text.ha-label { text-anchor: start; }
+.hero-art text.ha-t2 { font-size: 13.5px; }
+.hero-art text.ha-tag { font: 500 10px var(--f-mono); letter-spacing: .12em; fill: var(--muted); text-anchor: start; }
+.ha-group { fill: none; stroke: var(--node-stroke); stroke-width: 1.4; stroke-dasharray: 4 5; }
 .ha-thin { fill: none; stroke: var(--node-stroke); stroke-width: 1.4; }
 .ha-dot { fill: var(--node-stroke); }
 .ha-fill { fill: var(--accent); opacity: .75; }
 .ha-fill2 { fill: var(--node-stroke); opacity: .6; }
-.ha-gear circle, .ha-gear path { fill: none; stroke: var(--amber); stroke-width: 2; stroke-linecap: round; }
-.ha-gear { animation: spin 8s linear infinite; transform-box: fill-box; transform-origin: center; }
-@keyframes spin { to { transform: rotate(360deg); } }
 .ha-db path, .ha-db ellipse { fill: var(--surface); stroke: var(--accent); stroke-width: 1.4; }
-@media (prefers-reduced-motion: reduce) { .ha-gear { animation: none; } }
 .eyebrow {
   font: 500 12px/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase;
   color: var(--accent); margin-bottom: 20px;
@@ -274,7 +273,7 @@ section { padding: 88px 0 24px; }
 @media (prefers-reduced-motion: reduce) { .diagram .edge.on { animation: none; } }
 
 /* min-height keeps the page from jumping when a shorter facet is picked */
-.facet-text { border-top: 1px dashed var(--node-stroke); padding: 16px 4px 4px; min-height: 132px; }
+.facet-text { border-top: 1px dashed var(--node-stroke); padding: 16px 4px 4px; min-height: 156px; }
 .facet-text h4 { font-size: 17px; margin-bottom: 10px; color: var(--accent); }
 .facet-text p { font-size: 14.5px; color: var(--muted); }
 
